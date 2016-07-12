@@ -2,9 +2,10 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
+
 import java.util.*;
+
 import models.*;
-import flexjson.JSONSerializer;
 
 public class Application extends Controller {
 
@@ -22,7 +23,7 @@ public class Application extends Controller {
             return "{}";
         }
         if(u.compararPassword(peanut)){
-            render("Logged");
+            return User.serializador().serialize(u);
         };
         return "{}";
     }
