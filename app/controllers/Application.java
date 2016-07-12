@@ -13,4 +13,7 @@ public class Application extends Controller {
         render();
     }
 
+    public static Boolean tryToLogin (String email, String peanut) {
+        return true;
+    }
 }

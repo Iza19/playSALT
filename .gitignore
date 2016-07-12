@@ -13,5 +13,3 @@ server.pid
 *.eml
 /dist/
 .cache
-proyectoSALT.iws
-proyectoSALT.ipr

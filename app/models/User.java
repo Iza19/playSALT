@@ -26,3 +26,4 @@ public class User extends Model {
     @MaxSize(1000)
     public String peanut;
 }
+
