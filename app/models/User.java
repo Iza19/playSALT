@@ -1,13 +1,11 @@
 package models;
 
-
-import play.*;
+import com.google.code.morphia.annotations.Entity;
+import org.hibernate.validator.constraints.Email;
 import play.data.validation.MaxSize;
 import play.data.validation.MinSize;
 import play.data.validation.Required;
-import play.db.jpa.*;
-import javax.persistence.*;
-import java.util.*;
+import play.modules.morphia.Model;
 
 import static play.libs.F.Matcher.String;
 
@@ -17,9 +15,11 @@ import static play.libs.F.Matcher.String;
 
 @Entity
 public class User extends Model {
+
     @Required
     @Email
     public String email;
+
     // Peanut = Secret key for "password"
     @Required
     @MinSize(6)
