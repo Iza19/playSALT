@@ -19,3 +19,7 @@ GET     /public/                                staticDir:public
 
 # Android app service
 GET     /login/users/{email}/{peanut}           Application.tryToLogin
+
+# Guardar usuario
+POST    /guardar/usuario                        Application.guardarUsuario
+POST    /create/users                           Users.create

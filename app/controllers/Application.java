@@ -2,10 +2,9 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
-
 import java.util.*;
-
 import models.*;
+import flexjson.JSONSerializer;
 
 public class Application extends Controller {
 
@@ -13,7 +12,18 @@ public class Application extends Controller {
         render();
     }
 
-    public static Boolean tryToLogin (String email, String peanut) {
-        return true;
+    public static void guardarUsuario(){
+
+    }
+
+    public static String tryToLogin (String email, String peanut) {
+        User u = User.find("email", email).first();
+        if(u == null) {
+            return "{}";
+        }
+        if(u.compararPassword(peanut)){
+            render("Logged");
+        };
+        return "{}";
     }
 }
